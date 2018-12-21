@@ -14,7 +14,10 @@ pip2 install selenium
 pip2 install pyvirtualdisplay
 pip2 install requests
 ```
-
+chrome driver and chrome are also required!
+link to chrome driver: http://chromedriver.chromium.org/downloads
+copy it to bin!
+<br>
 ## How to use (text)
 1). Find a website with a login page<br>
 2). Inspect element to find the Selector of the username form<br>
