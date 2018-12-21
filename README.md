@@ -24,3 +24,4 @@ pip2 install requests
 6). Watch it go!
 
 ## How to use (Video)
+[![IMAGE ALT TEXT](https://i.ytimg.com/vi/Hd_kQVnajxk/1.jpg)](https://youtu.be/Hd_kQVnajxk "Video Title")
