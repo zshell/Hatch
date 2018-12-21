@@ -3,10 +3,10 @@ Hatch is a brute force tool that is used to brute force most websites
 
 
 ## Installation Instructions
-'''
+```
 git clone https://github.com/MetaChar/Hatch
 python2 main.py
-'''
+```
 
 ## Requirements
 ```
