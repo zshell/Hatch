@@ -13,6 +13,7 @@ python2 main.py
 pip2 install selenium
 pip2 install pyvirtualdisplay
 pip2 install requests
+sudo apt-get install xvfb
 ```
 chrome driver and chrome are also required!
 link to chrome driver: http://chromedriver.chromium.org/downloads
