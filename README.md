@@ -1,7 +1,18 @@
 # Hatch
 Hatch is a brute force tool that is used to brute force most websites
 
-
+# Update! v.1.3
+added arg support **chears**
+  -h, --help            show this help message and exit
+  -u USERNAME, --username=USERNAME
+                        Choose the username
+  --usernamesel=USERNAMESEL
+                        Choose the username selector
+  --passsel=PASSSEL     Choose the password selector
+  --loginsel=LOGINSEL   Choose the login button selector
+  --passlist=PASSLIST   Enter the password list directory
+  --website=WEBSITE     choose a website
+dont worry if you load up the tool without any args youll go to the default wizard!
 ## Installation Instructions
 ```
 git clone https://github.com/MetaChar/Hatch
