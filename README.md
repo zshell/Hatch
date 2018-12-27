@@ -12,6 +12,7 @@ added arg support **yay**
   --passlist=PASSLIST   Enter the password list directory<br>
   --website=WEBSITE     choose a website<br>
 dont worry if you load up the tool without any args youll go to the default wizard!
+Also i removed the apt xvfb and pip2 pyvirtualdisplay
 ## Installation Instructions
 ```
 git clone https://github.com/MetaChar/Hatch
@@ -21,9 +22,7 @@ python2 main.py
 ## Requirements
 ```
 pip2 install selenium
-pip2 install pyvirtualdisplay
 pip2 install requests
-sudo apt-get install xvfb
 ```
 chrome driver and chrome are also required!
 link to chrome driver: http://chromedriver.chromium.org/downloads
