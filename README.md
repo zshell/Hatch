@@ -2,7 +2,7 @@
 Hatch is a brute force tool that is used to brute force most websites
 
 # Update! v.1.3
-added arg support **chears**
+added arg support **yay**
   -h, --help            show this help message and exit
   -u USERNAME, --username=USERNAME
                         Choose the username
