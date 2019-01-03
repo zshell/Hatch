@@ -24,9 +24,11 @@ python2 main.py
 pip2 install selenium
 pip2 install requests
 ```
-chrome driver and chrome are also required!
-link to chrome driver: http://chromedriver.chromium.org/downloads
-copy it to bin!
+Chrome and chromedriver are required
+
+You can download chromedriver here: http://chromedriver.chromium.org/downloads
+for this fork, create a folder in your C drive called 'webdrivers' and place the executable file inside. If you want to use a different directory, simply change the CHROME_DVR_DIR variable inside the python file.
+
 <br>
 ## How to use (text)
 1). Find a website with a login page<br>
