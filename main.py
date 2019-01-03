@@ -42,7 +42,7 @@ parser.add_option("--website", dest="website",help="choose a website")
 (options, args) = parser.parse_args()
 
 
-chromeDriverDIR = 'C:\webdrivers\chromedriver.exe'
+CHROME_DVR_DIR = 'C:\webdrivers\chromedriver.exe'
 
 def wizard():
     print (banner)
@@ -76,12 +76,12 @@ def wizard():
 
 def brutes(username, username_selector ,password_selector,login_btn_selector,pass_list, website):
     f = open(pass_list, 'r')
-    driver = webdriver.Chrome(chromeDriverDIR)
+    driver = webdriver.Chrome(CHROME_DVR_DIR)
     optionss = webdriver.ChromeOptions()
     optionss.add_argument("--disable-popup-blocking")
     optionss.add_argument("--disable-extensions")
     count = 1 #count
-    browser = webdriver.Chrome(chromeDriverDIR)
+    browser = webdriver.Chrome(CHROME_DVR_DIR)
     while True:
         try:
             for line in f:
@@ -121,7 +121,7 @@ banner = color.BOLD + color.RED +'''
   {4}[{5}-{6}]--> {7}coded by Metachar
   {8}[{9}-{10}]-->{11} brute-force tool                      '''.format(color.RED, color.CWHITE,color.RED,color.GREEN,color.RED, color.CWHITE,color.RED,color.GREEN,color.RED, color.CWHITE,color.RED,color.GREEN)
 
-driver = webdriver.Chrome(chromeDriverDIR)
+driver = webdriver.Chrome(CHROME_DVR_DIR)
 optionss = webdriver.ChromeOptions()
 optionss.add_argument("--disable-popup-blocking")
 optionss.add_argument("--disable-extensions")
