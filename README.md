@@ -37,5 +37,5 @@ copy it to bin!
 6). Watch it go!
 
 ## How to use (Video)
-[![IMAGE ALT TEXT](https://i.ytimg.com/vi/VNPGNbOzvq0/hqdefault.jpg)](https://youtu.be/Hd_kQVnajxk "Video Title")
+[![IMAGE ALT TEXT](https://i.ytimg.com/vi/Hd_kQVnajxk/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLC7N67-Q67WAxMViUrHWJDdnkSM9A)](https://youtu.be/Hd_kQVnajxk "Video Title")
 
