@@ -25,13 +25,13 @@ Also i removed the apt xvfb and pip2 pyvirtualdisplay
 ## Installation Instructions
 ```
 git clone https://github.com/MetaChar/Hatch
-python2 main.py
+python3 main.py
 ```
 
 ## Requirements
 ```
-pip2 install selenium
-pip2 install requests
+pip3 install selenium
+pip3 install requests
 ```
 chrome driver and chrome are also required!
 link to chrome driver: http://chromedriver.chromium.org/downloads
