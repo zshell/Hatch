@@ -3,10 +3,12 @@ Hatch is a brute force tool that is used to brute force most websites
 
 # Update! recoed by FlroianBord2
 You can run Hatch with python3 now.
-The main pupose of this fork is to improve number of password tested by second.
-The orginal code call a two second scleep between each try, i replace this by the wait until presence of element located.
+The main purpose of this fork is to improve the number of passwords tested by second.
+The original code call a two-second sleep between each try, I replace this by the 'wait until presence of element located'
+
 time.sleep(2) -> wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, login_btn_selector)))
-The procces is two time faster with this modification.
+
+The process is two times faster with this modification.
 
 # Update! v.1.3
 added arg support **yay**
