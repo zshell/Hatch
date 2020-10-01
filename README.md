@@ -30,3 +30,7 @@ copy it to bin!
 ## How to use (Video)
 [![IMAGE ALT TEXT](https://i.ytimg.com/vi/Hd_kQVnajxk/1.jpg)](https://youtu.be/Hd_kQVnajxk "Video Title")
 
+## you can contribute through pull request
+if anyone wants to do changes fork it > changes > click commit changes > code > pull request. 
+
+
