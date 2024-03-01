@@ -130,9 +130,3 @@ website = options.website
 pass_list = options.passlist
 print(banner)
 brutes(username, username_selector, password_selector, login_btn_selector, pass_list, website)
-#Site: http://172.234.24.134/login
-#UserField: #name
-#PassField:#password
-#Login Button: #_submit
-#Username: Dummy dragon
-#D:\Python Tools\Hatch-master\Hatch-master\passlist.txt
