@@ -12,7 +12,6 @@ Hatch is a brute force tool that is used to brute force websites
 ## Installation Instructions
 ```
 git clone https://github.com/MCA-Discord-Devs/Hatch-Py3
-
 python main.py
 ```
 
