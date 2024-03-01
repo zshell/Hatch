@@ -10,11 +10,11 @@ Hatch is a brute force tool that is used to brute force websites
   --passlist=PASSLIST   Enter the password list directory<br>
   --website=WEBSITE     choose a website<br>
 ## Installation Instructions
-
+```
 git clone https://github.com/MCA-Discord-Devs/Hatch-Py3
 
 python main.py
-
+```
 
 ## Requirements
 ```
