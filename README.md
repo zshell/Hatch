@@ -1,5 +1,6 @@
 # Hatch
 Hatch is a brute force tool that is used to brute force websites
+That I forked and upgrade for 2024
 
 <br>
   -h, --help            show this help message and exit<br>
